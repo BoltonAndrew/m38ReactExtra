@@ -16,10 +16,18 @@ const Login = ({ setter, user }) => {
     <div>
       {user && <Navigate to="/home" />}
       <form onSubmit={submitHandler}>
-        <input onChange={() => setUsername} placeholder="Username" />
-        {!logBool && <input onChange={() => setEmail} placeholder="Email" />}
         <input
-          onChange={() => setPassword}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+        />
+        {!logBool && (
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+          />
+        )}
+        <input
+          onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           type="password"
         />

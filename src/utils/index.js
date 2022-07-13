@@ -1,6 +1,6 @@
 export const signUp = async (signObj, setter) => {
   try {
-    const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+    const res = await fetch(`${process.env.REACT_APP_REST_API} + user`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signObj),
