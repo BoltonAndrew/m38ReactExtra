@@ -46,7 +46,7 @@ export const updateFetch = async (filterObj, updateObj, setter) => {
   try {
     const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "PATCH",
-      headers: { "Content-Type": "application.json" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         filterObj,
         updateObj,
