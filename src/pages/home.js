@@ -1,7 +1,10 @@
-const Home = ({ user }) => {
+import Navbar from "../components/navbar";
+
+const Home = ({ user, setter }) => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <Navbar user={user} setter={setter} />
+      <h1>Welcome {user}</h1>
     </div>
   );
 };

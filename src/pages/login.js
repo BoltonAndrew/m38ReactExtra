@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import { signUp } from "../utils";
+import { signUp, tokenFetch } from "../utils";
 
 const Login = ({ setter, user }) => {
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [logBool, setLogBool] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.key("myToken")) {
+      tokenFetch(setter);
+    }
+  }, []);
 
   const submitHandler = async (e) => {
     e.preventDefault();
